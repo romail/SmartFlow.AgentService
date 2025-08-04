@@ -25,5 +25,5 @@ services:
       - qdrant_data:/qdrant/storage
     restart: always
 
-  volumes:
-    qdrant_data:
+volumes:      
+  qdrant_data:
