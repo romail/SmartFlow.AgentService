@@ -1,0 +1,1 @@
+# Handles Qdrant vector storage

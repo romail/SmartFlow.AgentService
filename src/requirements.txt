@@ -1,0 +1,20 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+openai
+
+# LangChain ecosystem
+langchain
+langchain-community
+langchain-qdrant
+langchain-huggingface
+
+# Vector DB (Qdrant)
+qdrant-client
+
+# Embeddings
+sentence-transformers
+transformers
+torch
+huggingface-hub

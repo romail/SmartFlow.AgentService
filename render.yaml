@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: smartflow-agent
+    env: docker
+    plan: starter
+    region: frankfurt
+    dockerContext: ./src/SmartFlow.AgentService
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: QDRANT_HOST
+        value: smartflow-qdrant
+      - key: QDRANT_PORT
+        value: 6333
+      - key: QDRANT_COLLECTION
+        value: smartflow_memory
+      - key: VECTOR_SIZE
+        value: 512
+      - key: EMBEDDING_MODEL
+        value: sentence-transformers/distiluse-base-multilingual-cased-v2
+
+  - type: private-service
+    name: smartflow-qdrant
+    env: docker
+    plan: starter
+    dockerImage: qdrant/qdrant
+    healthCheckPath: /ready
+    autoDeploy: false
+    ports:
+      - port: 6333
+    disk:
+      name: qdrant_data
+      mountPath: /qdrant/storage
+      sizeGB: 1
