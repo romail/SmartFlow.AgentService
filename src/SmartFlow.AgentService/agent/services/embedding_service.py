@@ -1,5 +1,5 @@
 # agent/services/embedding_service.py
-from langchain.vectorstores import Qdrant
+from langchain_community.vectorstores import Qdrant
 from agent.config.vector_store import vectorstore
 
 class EmbeddingService:

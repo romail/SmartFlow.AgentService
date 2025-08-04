@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 from transformers import pipeline
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Qdrant
 from langchain_community.llms import HuggingFacePipeline
 from langchain.chains import RetrievalQA
